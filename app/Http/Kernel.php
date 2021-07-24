@@ -2,6 +2,7 @@
 
 namespace App\Http;
 
+
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
@@ -69,6 +70,8 @@ class Kernel extends HttpKernel
         'api' => [
             // 使用别名来调用中间件
             // 请见：https://learnku.com/docs/laravel/{{doc_version}}/middleware#为路由分配中间件
+
+            \App\Http\Middleware\AcceptHeader::class,
             'throttle:api',
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
