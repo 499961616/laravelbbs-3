@@ -62,8 +62,11 @@ Route::prefix('v1')
 
                 // 话题列表，详情
                 Route::resource('topics', 'TopicsController')->only([
-                    'index', 'show'
-                ]);
+                    'index', 'show']);
+
+                //某个用户发表过的帖子
+                Route::get('users/{user}/topics', 'TopicsController@userIndex')
+                    ->name('users.topics.index');
 
         // 登录后可以访问的接口
             Route::middleware('auth:api')->group(function() {
