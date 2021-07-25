@@ -25,12 +25,22 @@ Route::prefix('v1')
             // 短信验证码
             Route::post('verificationCodes', 'VerificationCodesController@store')
                 ->name('verificationCodes.store');
-            // 用户注册
-            Route::post('users', 'UsersController@store')
-                ->name('users.store');
             //图片验证码
             Route::get('captchas','CaptchasController@store')
                 ->name('captchas.store');
+
+            // 用户注册
+            Route::post('users', 'UsersController@store')
+                ->name('users.store');
+            // 第三方登录
+            Route::post('socials/{social_type}/authorizations', 'AuthorizationsController@socialStore')
+                ->where('social_type', 'wechat')
+                ->name('socials.authorizations.store');
+            //登录
+            Route::post('authorizations', 'AuthorizationsController@store')
+                ->name('authorizations.store');
+
+
 
         });
             //频率限制1 分钟 60 次
