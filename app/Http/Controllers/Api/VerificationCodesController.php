@@ -17,7 +17,7 @@ class VerificationCodesController extends Controller
 
 
         if (!app()->environment('production')){
-            $code = 1234;
+            $code = '1234';
         }else{
             //生成四位数验证码
             $code = str_pad(random_int(1,9999),4,0,STR_PAD_LEFT);
