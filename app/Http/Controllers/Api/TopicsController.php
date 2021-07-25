@@ -39,8 +39,12 @@ class TopicsController extends Controller
         return new TopicResource($topic);
     }
 
-    public function destroy()
+    public function destroy(Topic $topic)
     {
+        $this->authorize('destroy',$topic);
 
+        $topic->delete();
+
+        return response(null,204);
     }
 }
