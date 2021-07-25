@@ -73,6 +73,12 @@ class User extends Authenticatable implements MustVerifyEmailContract,JWTSubject
         return $this->hasMany(Reply::class);
     }
 
+    public function images()
+    {
+        return $this->hasMany(Image::class);
+        }
+
+
     public function markAsRead()
     {
         $this->notification_count = 0;
