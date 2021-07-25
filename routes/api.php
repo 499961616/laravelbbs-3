@@ -51,8 +51,10 @@ Route::prefix('v1')
             //频率限制1 分钟 60 次
         Route::middleware('throttle:' . config('api.rate_limits.access'))
             ->group(function () {
-        // 游客可以访问的接口
 
+//|------------------------------------------------|
+// |      游客可以访问的接口
+//|------------------------------------------------|
             // 某个用户的详情
             Route::get('users/{user}', 'UsersController@show')
                 ->name('users.show');
@@ -68,7 +70,9 @@ Route::prefix('v1')
                 Route::get('users/{user}/topics', 'TopicsController@userIndex')
                     ->name('users.topics.index');
 
-        // 登录后可以访问的接口
+//|------------------------------------------------|
+//|                登录后可以访问的接口
+//|------------------------------------------------|
             Route::middleware('auth:api')->group(function() {
                 // 当前登录用户信息
                 Route::get('user', 'UsersController@me')
@@ -82,8 +86,11 @@ Route::prefix('v1')
 
                 // 发布话题
                 Route::resource('topics', 'TopicsController')->only([
-                    'store', 'update', 'destroy'
-                ]);
+                    'store', 'update', 'destroy']);
+                // 发布回复
+                Route::post('topics/{topic}/replies', 'RepliesController@store')
+                    ->name('topics.replies.store');
+
             });
     });
 
