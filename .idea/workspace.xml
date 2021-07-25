@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4b6d11ae-3f2f-4dd0-9747-1b2904683b8c" name="默认的" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/larabbs-L02_8.x.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/larabbs-L02_8.x.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/VerificationCodesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/VerificationCodesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/Api/VerificationCodeRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Api/VerificationCodeRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -153,6 +159,7 @@
       <path value="$PROJECT_DIR$/vendor/propaganistas/laravel-phone" />
       <path value="$PROJECT_DIR$/vendor/giggsey/locale" />
       <path value="$PROJECT_DIR$/vendor/giggsey/libphonenumber-for-php" />
+      <path value="$PROJECT_DIR$/vendor/gregwar/captcha" />
     </include_path>
   </component>
   <component name="ProjectId" id="1vl7fIcVg7NW4rUNCKBJH0Use3m" />
@@ -201,7 +208,7 @@
       <option name="presentableId" value="Default" />
       <updated>1627124924551</updated>
       <workItem from="1627124926027" duration="4556000" />
-      <workItem from="1627137604312" duration="8749000" />
+      <workItem from="1627137604312" duration="10988000" />
     </task>
     <servers />
   </component>

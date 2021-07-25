@@ -28,7 +28,9 @@ Route::prefix('v1')
             // 用户注册
             Route::post('users', 'UsersController@store')
                 ->name('users.store');
-
+            //图片验证码
+            Route::get('captchas','CaptchasController@store')
+                ->name('captchas.store');
 
         });
             //频率限制1 分钟 60 次
