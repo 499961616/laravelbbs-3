@@ -94,6 +94,8 @@ class Kernel extends HttpKernel
         // 只有游客才能访问，在 register 和 login 请求中使用，只有未登录用户才能访问这些页面
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
 
+        // 接口语言设置
+        'change-locale' => \App\Http\Middleware\ChangeLocale::class,
         // 密码确认，你可以在做一些安全级别较高的修改时使用，例如说支付前进行密码确认
         'password.confirm' => \Illuminate\Auth\Middleware\RequirePassword::class,
 

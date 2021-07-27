@@ -18,7 +18,9 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::prefix('v1')
-    ->namespace('Api')->name('api.v1.')
+    ->namespace('Api')
+    ->middleware('change-locale')
+    ->name('api.v1.')
     ->group(function () {
         //频率限制1 分钟 1 次
         Route::middleware('throttle:' . config('api.rate_limits.sign'))->group(function (){
