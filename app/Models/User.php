@@ -9,9 +9,8 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Auth\MustVerifyEmail as MustVerifyEmailTrait;
 use Auth;
 use Spatie\Permission\Traits\HasRoles;
-use Tymon\JWTAuth\Contracts\JWTSubject;
 
-class User extends Authenticatable implements MustVerifyEmailContract,JWTSubject
+class User extends Authenticatable implements MustVerifyEmailContract
 {
     use Traits\ActiveUserHelper;
     use Traits\LastActivedAtHelper;
@@ -44,7 +43,8 @@ class User extends Authenticatable implements MustVerifyEmailContract,JWTSubject
         'avatar',
         'phone',
         'weixin_openid',
-        'weixin_unionid'
+        'weixin_unionid',
+        'registration_id'
     ];
 
     protected $hidden = [

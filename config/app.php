@@ -176,8 +176,9 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         //短信
-        \App\Providers\EasySmsServiceProvider::class
-
+        App\Providers\EasySmsServiceProvider::class,
+        //推送
+        App\Providers\JpushServiceProvider::class,
     ],
 
     /*
