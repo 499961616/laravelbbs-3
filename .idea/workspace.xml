@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="4b6d11ae-3f2f-4dd0-9747-1b2904683b8c" name="默认的" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/NotificationsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/NotificationsController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -216,7 +215,7 @@
       <option name="presentableId" value="Default" />
       <updated>1627124924551</updated>
       <workItem from="1627124926027" duration="4556000" />
-      <workItem from="1627137604312" duration="44949000" />
+      <workItem from="1627137604312" duration="45642000" />
     </task>
     <servers />
   </component>
