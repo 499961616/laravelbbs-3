@@ -7,9 +7,11 @@ use App\Http\Requests\Api\SocialAuthorizationRequest;
 use App\Models\User;
 use Illuminate\Auth\AuthenticationException;
 use Illuminate\Support\Facades\Auth;
+use Laravel\Passport\Http\Controllers\AccessTokenController;
 use Overtrue\LaravelSocialite\Socialite;
+use Psr\Http\Message\ServerRequestInterface;
 
-class AuthorizationsController extends Controller
+class AuthorizationsController extends AccessTokenController
 {
 
     //第三方登录
@@ -64,22 +66,9 @@ class AuthorizationsController extends Controller
     }
 
     //账号密码登录
-    public function store(AuthorizationRequest $request)
+    public function store(ServerRequestInterface $request)
     {
-        $username = $request->username;
-
-        //过滤判断账号是否是邮箱还是手机号
-        filter_var($username,FILTER_VALIDATE_EMAIL)?
-            $credentials['email'] = $username :
-            $credentials['phone'] = $username;
-
-        $credentials['password'] = $request->password;
-
-        if (!$token = Auth::guard('api')->attempt($credentials)){
-            throw new AuthenticationException(trans('auth.failed'));
-        }
-
-        return $this->respondWithToken($token)->setStatusCode(201);
+        return $this->issueToken($request)->setStatusCode(201);
     }
 
     public function respondWithToken($token)
@@ -90,15 +79,20 @@ class AuthorizationsController extends Controller
             'expires_in' => Auth::guard('api')->factory()->getTTL() * 60
         ]);
     }
-    public function update()
+
+
+    public function update(ServerRequestInterface $request)
     {
-        $token = auth('api')->refresh();
-        return $this->respondWithToken($token);
+        return $this->issueToken($request);
     }
 
     public function destroy()
     {
-        auth('api')->logout();
-        return response(null, 204);
+        if (auth('api')->check()) {
+            auth('api')->user()->token()->revoke();
+            return response(null, 204);
+        } else {
+            throw new AuthenticationException('The token is invalid.');
+        }
     }
 }
