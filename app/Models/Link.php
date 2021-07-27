@@ -3,7 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Cache;
+use Illuminate\Support\Facades\Cache;
 
 class Link extends Model
 {

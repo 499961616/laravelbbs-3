@@ -65,7 +65,6 @@ Route::prefix('v1')
                 // 话题列表，详情
                 Route::resource('topics', 'TopicsController')->only([
                     'index', 'show']);
-
                 //某个用户发表过的帖子
                 Route::get('users/{user}/topics', 'TopicsController@userIndex')
                     ->name('users.topics.index');
@@ -75,6 +74,11 @@ Route::prefix('v1')
                 //某个用户的回复列表
                 Route::get('users/{user}/replies','RepliesController@userIndex')
                     ->name('users.replies.index');
+                // 资源推荐
+                Route::get('links', 'LinksController@index')
+                    ->name('links.index');
+
+
 
 //|------------------------------------------------|
 //|                登录后可以访问的接口
@@ -99,6 +103,7 @@ Route::prefix('v1')
                 // 删除回复
                 Route::delete('topics/{topic}/replies/{reply}', 'RepliesController@destroy')
                     ->name('topics.replies.destroy');
+
                 // 通知列表
                 Route::get('notifications', 'NotificationsController@index')
                     ->name('notifications.index');
@@ -108,6 +113,7 @@ Route::prefix('v1')
                 // 标记消息通知为已读
                 Route::patch('user/read/notifications', 'NotificationsController@read')
                     ->name('user.notifications.read');
+
                 // 当前登录用户权限
                 Route::get('user/permissions', 'PermissionsController@index')
                     ->name('user.permissions.index');
