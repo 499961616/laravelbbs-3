@@ -164,6 +164,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/nyholm/psr7" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/defuse/php-encryption" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/laravel/passport" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/kslimani/laravel-passport-grant" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

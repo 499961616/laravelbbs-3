@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "63e3e3719c95d93d200fa247235ae402",
+    "content-hash": "1e7ed5204c4bfede3e7bd41f95e1105e",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2054,6 +2054,63 @@
                 "source": "https://github.com/jpush/jpush-api-php-client/tree/v3.6.6"
             },
             "time": "2019-11-26T06:04:53+00:00"
+        },
+        {
+            "name": "kslimani/laravel-passport-grant",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kslimani/laravel-passport-grant.git",
+                "reference": "6c39434f3e229434ce6de0ac856a62524a4b3cf6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kslimani/laravel-passport-grant/zipball/6c39434f3e229434ce6de0ac856a62524a4b3cf6",
+                "reference": "6c39434f3e229434ce6de0ac856a62524a4b3cf6",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "laravel/passport": ">=4.0",
+                "php": ">=7.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^4.0",
+                "phpunit/phpunit": "^8.3"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Sk\\Passport\\GrantTypesServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Sk\\Passport\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Laravel Passport custom grant types provider",
+            "keywords": [
+                "grant",
+                "laravel",
+                "passport"
+            ],
+            "support": {
+                "issues": "https://github.com/kslimani/laravel-passport-grant/issues",
+                "source": "https://github.com/kslimani/laravel-passport-grant/tree/1.1.0"
+            },
+            "time": "2019-10-02T12:21:08+00:00"
         },
         {
             "name": "laravel-lang/lang",
